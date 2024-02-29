@@ -7,7 +7,7 @@ LABEL maintainer_full_name="Tiehoule Aubin Gautier"
 LABEL maintainer_phone_number="+2250708345891"
 
 # Define Packages to install
-ARG BUILD_PACKAGES="curl build-base libxml2-dev libxslt-dev imagemagick linux-headers"
+ARG BUILD_PACKAGES="curl build-base libxml2-dev libxslt-dev imagemagick linux-headers wget"
 ARG DEV_PACKAGES="postgresql-dev nodejs yarn tzdata git"
 
 # Define env variables and version of bundler

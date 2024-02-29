@@ -44,7 +44,14 @@ end
 group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
-  gem "better_errors"
-  gem "binding_of_caller"
 end
+
+gem "better_errors"
+gem "binding_of_caller"
+
+# Curl Request
+gem 'typhoeus', '~> 1.4'
+
+# PDF Generator
+gem 'prawn-html', '~> 0.7.1'
 

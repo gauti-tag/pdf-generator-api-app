@@ -42,8 +42,8 @@ module App
     config.logger    = ActiveSupport::TaggedLogging.new(logger)
     
     # Setup de default language
-    config.i18n.default_locale = :fr
-
+    config.i18n.default_locale = :en
+    
     # Set folders to be load when the app is running 
     config.autoload_paths << Rails.root.join('app/commands')
     config.autoload_paths << Rails.root.join('app/services')
