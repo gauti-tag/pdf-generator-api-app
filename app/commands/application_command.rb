@@ -1,4 +1,4 @@
-class ApplicationService
+class ApplicationCommand
     def self.call params
    	    new(params).call
     end 

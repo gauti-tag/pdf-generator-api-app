@@ -1,0 +1,176 @@
+<!doctype html>
+<html>
+  <head>
+    <style>
+    body {
+        background-color: rgb(235, 227, 253);
+        font-size: 11;
+        color: rgb(2, 2, 129);
+    }
+
+    .rectangle {
+        background-color: rgb(3, 3, 87);
+        color: white;
+        width: 200px;
+        margin: 10px;
+    }
+
+    .carre {
+        background-color: rgb(3, 3, 87);
+        color: white;
+        width: 100%;
+    }
+
+    #ContainerR {
+        width: 40%;
+        color: white;
+        margin-left: 300px;
+        margin-top: 20%;
+        margin-bottom: 10%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .FlexContainer {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+    }
+
+    .red {
+        color: rgb(109, 5, 5);
+    }
+
+    .BoxA {
+        background-color: white;
+        flex-direction: row;
+    }
+
+    .BoxB {
+        display: flex;
+        background-color: white;
+        justify-content: center;
+        flex-direction: column;
+        padding-left: 40px;
+        padding-right: 40px;
+        padding-top: 10px;
+        padding-bottom: 30px;
+        margin-left: 6px;
+        margin-right: 6px;
+
+    }
+
+    .BoxC {
+        background-color: white;
+        flex-direction: row;
+        padding: 20px;
+    }
+
+    .Rectangle2 {
+        background-color: rgb(3, 3, 87);
+        color: white;
+        padding: 1%;
+    }
+
+    table {
+        border-collapse: collapse;
+        font-size: 11;
+    }
+
+    table {
+        width: 100%
+    }
+
+    td {
+        padding: 10px;
+    }
+
+    tr {
+        border-bottom: 1px hsl(30, 18%, 87%);
+    }
+
+    .Border {
+        column-gap: 15px;
+        border-bottom: 1px hsl(234, 97%, 24%) solid;
+        width: 82%;
+    }
+
+    img {
+        width: auto;
+        max-height: 70px;
+    }
+
+    .ImgO {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .Spacing {
+        padding-left: 60px;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    #height {
+        height: 100px;
+    }
+
+    #width {
+        height: 60px;
+        margin-top: 10px;
+    }
+</style>
+  </head>
+  <body>
+    <div class="FlexContainer">
+        <div class=" BoxB">
+            <h1>RECU DE PAIEMENT</h1>
+            <br>
+            <p><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nom du Service : ONECI-Achat de timbre-Nouvelle CNI</b></p>
+            </tr>
+            <br>
+            <div class="rectangle"> <b> &nbsp;&nbsp;Informations sur le paiement</b></div>
+            <table>
+                <tr>
+                    <td><b>Réference de paiement: <%= @data['data']['transaction_id'] %></b></td>
+                    <td class="Spacing"><b>Date de paiement :15/02/2024 à 12:24:37</b></td>
+                </tr>
+                <tr>
+                    <td><b>Moyen de paiement: <%= @data['data']['wallet'] %></b></td>
+                    <td class="Spacing"><b>statut: <%= @data['code'] == '1' ? 'Payé' : 'Echec' %></b></td>    
+                </tr>
+                <tr>
+                    <td><b>Numero de télephone/Carte: </b> </td>
+                </tr>
+            </table>
+            <div>
+                <br>
+                <div class="carre">
+                    <b>
+                        <p>&nbsp;&nbsp;Description</p>
+                    </b>
+                </div>
+                <table>
+                    <tr>
+                        <td class="Border"><b>Cout du service</b></td>
+                        <td class="Border"><b><%= @data['data']['paid_transaction_amount'] %> FCFA</b></td>
+                    </tr>
+                    <tr>
+                        <td class="Border"><b>Frais de service</b></td>
+                        <td class="Border"> <b>0 FCFA</b></td>
+                    </tr>
+                    <tr>
+                        <td class="Border"><b>Total</b></td>
+                        <td class="Border"><b>5000 FCFA</b></td>
+                    </tr>
+                </table>
+            </div>
+            <div id="ContainerR" class="Rectangle2"><b>Montant Payé &nbsp;&nbsp;&nbsp; <%= @data['data']['paid_transaction_amount'] %> &nbsp;&nbsp;</b></div>
+            <h4 class="red"><b>Besoin d'aide?</b></h4>
+            <p><b>En cas de soucis,veuillez contacter ONECI</b></p>
+        </div>
+    </div>
+  </body>
+</html>
